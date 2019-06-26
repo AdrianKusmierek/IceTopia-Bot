@@ -153,7 +153,7 @@ if (msg.startsWith(prefix + 'MELD')) {
    
    
    if (msg.startsWith(prefix + 'CLEAR')) {
-        if (message.member.hasPermission(" ")) {
+        if (message.member.hasPermission("ADMINISTRATOR")) {
             message.channel.fetchMessages()
                .then(function(list){
                     message.channel.bulkDelete(list);
