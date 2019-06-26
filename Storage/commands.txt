@@ -1,0 +1,3 @@
+Commands:
+
+\help					-Laat alle commands aan je zien.
