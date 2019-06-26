@@ -138,6 +138,18 @@ if (msg.startsWith(prefix + 'EVENT')) {
      message.delete({timeout: 1000});	
 }
 	
+if (msg.startsWith(prefix + 'MELD')) {
+	       const color = args[0]
+           const text = args.slice(0).join(" ");
+           if (text.length < 1) return message.channel.send("Can not make an event of nothing");
+           const embed = new Discord.RichEmbed()
+           .setColor(0x0000ff)
+           .setTitle("Melding")
+           .setDescription(text);
+           message.channel.send({embed})
+     message.delete({timeout: 1000});	
+}
+	
    
    
    if (msg.startsWith(prefix + 'CLEAR')) {
