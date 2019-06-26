@@ -3,6 +3,7 @@ const Discord = require("discord.js")
 const client = new Discord.Client﻿
 const ownerID = '501122648806260740';
 const fs = require('fs');
+const profanities = require('profanities')
 const prefix = '\\';
  
 
@@ -58,7 +59,15 @@ client.on('message', message => {
 	
 	var cmd = client.commands.get(cont[0])
 	if (cmd) cmd.run(client, message, args);
-	
+
+    // profanity
+    for (x = 0; x < profanities.length; x++) {
+        if (message.content.toUpperCase() == profanities[x].toUpperCase()) {
+        message.channel.send('Hey! Don\'t say that!')
+        message.delete()
+        return;
+        }
+    }
 
     // first we need to make sure that it isn't reading a message that the bot is sending
     if (sender.id === '579969907924533259') {
