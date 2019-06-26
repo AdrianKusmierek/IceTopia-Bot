@@ -1,3 +1,7 @@
 Commands:
 
-\help					-Laat alle commands aan je zien.
+\help					      -Laat alle commands aan je zien.
+\event (txt)        -Laat je een event txt maken.
+\meld (txt)         -Laat je een melding txt maken.
+\gm
+\gn
