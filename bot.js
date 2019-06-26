@@ -127,7 +127,6 @@ if (msg.includes('FUCK')) {
 
 	
 if (msg.startsWith(prefix + 'EVENT')) {
-	if (message.member.hasPermission("ADMINISTRATOR")) {
 	       const color = args[0]
            const text = args.slice(0).join(" ");
            if (text.length < 1) return message.channel.send("Can not make an event of nothing");
@@ -140,7 +139,6 @@ if (msg.startsWith(prefix + 'EVENT')) {
 }
 	
 if (msg.startsWith(prefix + 'MELD')) {
-	if (message.member.hasPermission("ADMINISTRATOR")) {
 	       const color = args[0]
            const text = args.slice(0).join(" ");
            if (text.length < 1) return message.channel.send("Can not make an event of nothing");
@@ -165,7 +163,7 @@ if (msg.startsWith(prefix + 'MELD')) {
    
    
 	
-};
+});
 
 
 // Listener Event: Bot Lauched
