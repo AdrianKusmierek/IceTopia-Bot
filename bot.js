@@ -7,7 +7,6 @@ const prefix = '\\';
  
 
 
-const userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
 const commandsList = (fs.readFileSync('Storage/commands.txt', 'utf8'));
 client.commands = new Discord.Collection();
 
@@ -126,25 +125,6 @@ if (msg.includes('FUCK')) {
 }
 
 
-if (msg.startsWith(prefix + 'USERINFO')) {
-
-    if (msg === prefix + 'USERINFO') {
-    message.channel.send(userInfo(sender));
-	message.delete({timeout: 1000});
-    }
-}
-
-
-if (!userData[sender.id]) userData[sender.id] = {
-    messagesSent: 0
-}
-
-
-userData[sender.id].messagesSent++;
-
-
-fs.writeFile('Storage/userData.json', JSON.stringify(userData), (err) => {
-    if (err) console.error(err);
 	
 if (msg.startsWith(prefix + 'EVENT')) {
 	       const color = args[0]
