@@ -1,0 +1,9 @@
+exports.run = (client, message, args, ops) => {
+
+    message.channel.send('@everyone')
+	    message.delete({timeout: 1000});
+}
+
+module.exports.config = {
+	command: 'e'
+}
