@@ -172,9 +172,13 @@ client.on('ready', () => {
 
 
     client.user.setStatus('dnd')
-
-
-    client.user.setActivity('\\help')
+    client.user.setPresence({
+        game: {
+            name: '//help',
+            type: "Playing",
+            url: "https://discordapp.com/"
+        }
+    });
 	
 });
 
