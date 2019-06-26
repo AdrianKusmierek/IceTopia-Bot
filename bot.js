@@ -153,10 +153,12 @@ if (msg.startsWith(prefix + 'MELD')) {
    
    
    if (msg.startsWith(prefix + 'CLEAR')) {
+	   if (message.member.hasPermission(" ")) {
             message.channel.fetchMessages()
                .then(function(list){
                     message.channel.bulkDelete(list);
                 }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})
+	   }
     }
    
    
