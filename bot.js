@@ -153,7 +153,6 @@ if (msg.startsWith(prefix + 'EVENT')) {
 	
 });
 
-});
 
 // Listener Event: Bot Lauched
 client.on('ready', () => {
