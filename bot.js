@@ -174,7 +174,7 @@ client.on('ready', () => {
     client.user.setStatus('dnd')
     client.user.setPresence({
         game: {
-            name: '//help',
+            name: '/help',
             type: "Playing",
             url: "https://discordapp.com/"
         }
@@ -190,13 +190,13 @@ client.on('guildMemberAdd', member => {
 
     member.addRole(role)
 
-    member.guild.channels.get('579969907924533259').send('**' + member.user.username + '**, has joined the server!')
+    member.guild.channels.get('583971779446439937').send('Welcome **' + member.user.username + '**!!')
 
 });
 
     client.on('guildMemberRemove', member => {
 
-        member.guild.channels.get('579969907924533259').send('**' + member.user.username + '**, has left the server!');
+        member.guild.channels.get('583971779446439937').send('**' + member.user.username + '**, has left the server!');
 
 });
 
