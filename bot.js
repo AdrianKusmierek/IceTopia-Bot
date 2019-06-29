@@ -86,6 +86,11 @@ client.on('message', message => {
         message.channel.send(commandsList)
 		message.delete({timeout: 1000});
     }
+	
+    if (msg === prefix + 'IP') {
+        message.channel.send('IP: **145.239.98.210:25566**.')
+                message.delete({timeout: 1000});
+    }
 
     if (message.channel.id === '579779890052595743') {
         if (isNaN(message.content)) {
