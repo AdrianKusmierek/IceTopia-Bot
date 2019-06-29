@@ -14,7 +14,7 @@ message.channel.send({embed: {
       },
       {
         name: "Ontwikkeling",
-        value: "De bot is gemaakt en ontwikkeld op 25/6/2019 en bevindt zich nog steeds in de ** __ ALPHA __ ** -versie."
+        value: "De bot is gemaakt en ontwikkeld op 25/6/2019 en bevindt zich nog steeds in de ** __ALPHA-versie__ **."
       },
       {
         name: "GitHub",
