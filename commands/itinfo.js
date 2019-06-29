@@ -17,7 +17,6 @@ module.exports.run = async (client, message, args) => {
    * Takes a Date object, defaults to current date.
    */
   .setTimestamp()
-  .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
   .addField("Deze community is aangemaakt door Loeki, de eigenaar van IceTopia.")
   /*
    * Inline fields may not display as inline if the thumbnail and/or image is too big.
