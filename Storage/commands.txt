@@ -1,10 +1,10 @@
 ```Commands:
 
-\help					      -Laat alle commands aan je zien.
-\event (txt)        -Laat je een event txt maken.
-\meld (txt)         -Laat je een melding txt maken.
+\help					      
+\event (txt)        
+\meld (txt)         
 \gm
 \gn
-\ip                 -Laat je de IP van de IceTopia MC server zien.
-\info               -Laat je info zien over de IceTopia Bot.
-\itinfo             -Laat je info zien over de IceTopia community.```
+\ip                
+\info               
+\itinfo```
