@@ -27,8 +27,8 @@ message.channel.send({embed: {
       text: "© Adrian"
     }
   }
-		      message.delete({timeout: 1000});
 });
+message.delete({timeout: 1000});
 
 }
 
