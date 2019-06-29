@@ -4,4 +4,5 @@
 \event (txt)        -Laat je een event txt maken.
 \meld (txt)         -Laat je een melding txt maken.
 \gm
-\gn```
+\gn
+\ip                 -Laat je de IP van de IceTopia MC server zien.```
