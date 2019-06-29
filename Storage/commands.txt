@@ -5,4 +5,5 @@
 \meld (txt)         -Laat je een melding txt maken.
 \gm
 \gn
-\ip                 -Laat je de IP van de IceTopia MC server zien.```
+\ip                 -Laat je de IP van de IceTopia MC server zien.
+\info               -Laat je info over de IceTopia Bot zien.```
