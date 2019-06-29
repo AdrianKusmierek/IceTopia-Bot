@@ -30,6 +30,7 @@ module.exports.run = async (client, message, args) => {
   .addField("MC Server Info", "De server heeft: 1024MB RAM; Plugin Support; en 101 player slots.", true);
  
   message.channel.send({embed});
+	message.delete({timeout: 1000});
 }
 
 module.exports.config = {
