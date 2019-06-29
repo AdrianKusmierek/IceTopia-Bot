@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
    */
   .setColor(0x0037ff)
   .setDescription("IceTopia is een openbaar community vol met vriendelijke leden.")
-  .setFooter("This is the footer text, it can hold 2048 characters", "https://i.imgur.com/SXL3FF6.png")
+  .setFooter("IceTopia Community", "https://i.imgur.com/SXL3FF6.png")
   .setImage("https://i.imgur.com/JIyjCJV.jpg")
   .setThumbnail("https://i.imgur.com/SXL3FF6.png")
   /*
