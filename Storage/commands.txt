@@ -6,4 +6,5 @@
 \gm
 \gn
 \ip                 -Laat je de IP van de IceTopia MC server zien.
-\info               -Laat je info over de IceTopia Bot zien.```
+\info               -Laat je info zien over de IceTopia Bot.
+\itinfo             -Laat je info zien over de IceTopia community.```
