@@ -18,7 +18,7 @@ message.channel.send({embed: {
       },
       {
         name: "GitHub",
-        value: "U zult het openbare script [hier] (https://github.com/AdrianKusmierek/IceTopia-Bot/) kunnen vinden."
+        value: "U zult het openbare script [hier](https://github.com/AdrianKusmierek/IceTopia-Bot/) kunnen vinden."
       }
     ],
     timestamp: new Date(),
@@ -27,6 +27,7 @@ message.channel.send({embed: {
       text: "© Adrian"
     }
   }
+		      message.delete({timeout: 1000});
 });
 
 }
