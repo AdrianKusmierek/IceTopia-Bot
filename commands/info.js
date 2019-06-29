@@ -17,6 +17,10 @@ message.channel.send({embed: {
         value: "De IceTopia Bot is gecreëerd op 25/6/2019 en wordt sindsdien ontwikkeld."
       },
       {
+	name: "Website"
+	value: "Als je mee wilt helpen met de ontwikkeling van de IceTopia Bot, ga naar de [IceTopia Project website](https://sites.google.com/view/icetopia-project/home)."
+      },
+      {
         name: "GitHub",
         value: "U zult het openbare script [hier](https://github.com/AdrianKusmierek/IceTopia-Bot/) kunnen vinden."
       }
