@@ -86,11 +86,6 @@ client.on('message', message => {
         message.channel.send(commandsList)
 		message.delete({timeout: 1000});
     }
-	
-    if (msg === prefix + 'IP') {
-        message.channel.send('IP: **145.239.98.210:25566**.')
-                message.delete({timeout: 1000});
-    }
 
     if (message.channel.id === '579779890052595743') {
         if (isNaN(message.content)) {
@@ -154,6 +149,16 @@ if (msg.startsWith(prefix + 'MELD')) {
            message.channel.send({embed})
      message.delete({timeout: 1000});	
 }
+	
+	if (msg.startsWith(prefix + 'IP')) {
+           const color = args[0]
+           const embed = new Discord.RichEmbed()
+           .setColor(0xff0000)
+           .setTitle("IP")
+           .setDescription("play.itemcraft.net");
+           message.channel.send({embed})
+     message.delete({timeout: 1000});
+   }
 	
    
    
