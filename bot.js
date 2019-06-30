@@ -193,7 +193,7 @@ client.on('ready', () => {
     console.log('Bot Lauched...') // Runs when the bot is Launched
 
 
-    client.user.setStatus('dnd')
+    client.user.setStatus('Online')
     client.user.setPresence({
         game: {
             name: '/help',
