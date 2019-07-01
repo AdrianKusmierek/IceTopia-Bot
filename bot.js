@@ -49,7 +49,6 @@ client.on('message', message => {
 	
 	var cmd = client.commands.get(cont[0])
 	var command = args.shift().toLowerCase();
-	if (cmd) cmd.run(client, message, args);
 	
 
    
