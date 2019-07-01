@@ -79,7 +79,7 @@ client.on('message', message => {
 		message.delete({timeout: 1000});
     }
 	
-    if (command === 'ping') {
+    if (command === 'PING') {
 	message.channel.send('Pong!');
     }
 
