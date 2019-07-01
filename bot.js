@@ -42,7 +42,7 @@ client.on('message', message => {
     let sender = message.author; 
     let cont = message.content.slice(prefix.length).split(" ");
     let args = cont.slice(1);
-    let command = args.shift().toUpperCase();
+    let command = args.shift().toLowerCase();
 	if (cmd) cmd.run(client, message, args);
 	
 	if (!message.content.startsWith(prefix)) return;
@@ -79,7 +79,7 @@ client.on('message', message => {
 		message.delete({timeout: 1000});
     }
 	
-    if (command === 'PING') {
+    if (command === 'ping') {
 	message.channel.send('Pong!');
     }
 
@@ -192,7 +192,7 @@ client.on('ready', () => {
     client.user.setStatus('Online')
     client.user.setPresence({
         game: {
-            name: '/help',
+            name: '\help',
             type: "Playing",
             url: "https://discordapp.com/"
         }
