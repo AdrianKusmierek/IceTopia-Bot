@@ -35,7 +35,7 @@ function userInfo(user) {
 
 
 // listener event: message received
-client.on('message', message => {
+client.on("message", async message => {
 
     // variables
     let msg = message.content.toUpperCase(); 
