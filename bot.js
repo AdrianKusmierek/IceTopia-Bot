@@ -42,7 +42,7 @@ client.on('message', message => {
     let sender = message.author; 
     let cont = message.content.slice(prefix.length).split(" ");
     let args = cont.slice(1);
-    let command = args.shift().toLowerCase();
+    let command = args.shift().toUpperCase();
 	if (cmd) cmd.run(client, message, args);
 	
 	if (!message.content.startsWith(prefix)) return;
@@ -77,6 +77,10 @@ client.on('message', message => {
     if (msg === prefix + 'HELP' || msg === prefix + 'COMMANDS') {
         message.channel.send(commandsList)
 		message.delete({timeout: 1000});
+    }
+	
+    if (command === 'ping') {
+	message.channel.send('Pong!');
     }
 
     if (message.channel.id === '579779890052595743') {
