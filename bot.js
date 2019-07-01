@@ -140,13 +140,12 @@ client.on("message", async message => {
 	
 	if(command === "purge") {
     // This command removes all messages from all users in the channel, up to 10000.
-        sender.delete({timeout; 1000});
     
     // get the delete count, as an actual number.
     const deleteCount = parseInt(args[0], 10);
     
     // Ooooh nice, combined conditions. <3
-    if(!deleteCount || deleteCount < 1 || deleteCount > 10000)
+    if(!deleteCount || deleteCount < 2 || deleteCount > 10000)
       return message.reply("Please provide a number between 1 and 10000 for the number of messages to delete");
     
     // So we get our messages, and delete them. Simple enough, right?
