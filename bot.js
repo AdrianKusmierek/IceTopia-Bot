@@ -10,7 +10,7 @@ const prefix = '\\';
 
 const commandsList = (fs.readFileSync('Storage/commands.txt', 'utf8'));
 client.commands = new Discord.Collection();
-let commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./commands');
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
