@@ -107,6 +107,7 @@ client.on("message", async message => {
     await member.ban(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
     message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
+		message.delete({timeout: 1000});
   }
 
     if (message.channel.id === '579779890052595743') {
@@ -114,7 +115,6 @@ client.on("message", async message => {
         message.delete()
         message.author.send('Only send numbers please.')
     }
-	    message.delete({timeout: 1000});
 }
 
 if (msg.includes('LOSER')) {
