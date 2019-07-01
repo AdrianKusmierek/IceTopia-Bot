@@ -10,21 +10,10 @@ const prefix = '\\';
 const commandsList = (fs.readFileSync('Storage/commands.txt', 'utf8'));
 client.commands = new Discord.Collection();
 
-fs.readdir('./commands/', (err, files) => {
-	if(err) console.error(err);
-	
-	const jsfiles = files.filter(f => f.split('.').pop() === 'js');
-	if (jsfiles.length <= 0) { return console.log('No commands found...')}
-	else { console.log(jsfiles.length + ' commands found...') }
-	
-	jsfiles.forEach((f, i) => {
-		const cmds = require(`./commands/${f}`);
-		console.log(`Command ${f} loading...`);
-		client.commands.set(cmds.config.command, cmds);
-	});
-	
-	
-});
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commands.set(command.name, command);
+}
 
 // Functions
 function userInfo(user) {
