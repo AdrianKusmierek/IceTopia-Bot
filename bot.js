@@ -3,7 +3,6 @@ const Discord = require("discord.js")
 const client = new Discord.Client﻿
 const ownerID = '501122648806260740';
 const fs = require('fs');
-const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 const prefix = '\\';
  
