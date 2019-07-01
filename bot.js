@@ -1,6 +1,6 @@
 // Calling the package
 const Discord = require("discord.js")
-const client = new Discord.Client
+const client = new Discord.Client()
 const ownerID = '501122648806260740';
 const fs = require('fs');
 const prefix = '\\';
@@ -44,9 +44,13 @@ client.on("message", async message => {
     let cont = message.content.slice(prefix.length).split(" ");
     let args = message.content.slice(prefix.length).split(/ +/);
 	
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if (!message.content.startsWith(prefix) || message.author.bot) {
+        return;
+    }
 	
-	if (!message.content.startsWith(prefix)) return;
+	if (!message.content.startsWith(prefix)) {
+        return;
+    }
 	
 	var cmd = client.commands.get(cont[0])
 	var command = args.shift().toLowerCase();
@@ -60,7 +64,9 @@ client.on("message", async message => {
 	
 	 // Voice only works in guilds, if the message does not come from a guild,
   // we ignore it
-  if (!message.guild) return;
+  if (!message.guild) {
+      return;
+  }
 
   if (msg === prefix + 'JOIN') {
     // Only try to join the sender's voice channel if they are in one themselves
@@ -93,17 +99,22 @@ client.on("message", async message => {
 	if(command === 'ban') {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
     // In the real world mods could ban too, but this is just an example, right? ;)
-    if(!message.member.roles.some(r=>["Owner", "Moderator", "MC-staff", "Helper", "Programmeur", "Admin", "Lead-Moderator", "Head-Admin"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
+    if (!message.member.roles.some(r=>["Owner", "Moderator", "MC-staff", "Helper", "Programmeur", "Admin", "Lead-Moderator", "Head-Admin"].includes(r.name))) {
+        return message.reply("Sorry, you don't have permissions to use this!");
+    }
     
     let member = message.mentions.members.first();
-    if(!member)
-      return message.reply("Please mention a valid member of this server");
-    if(!member.bannable) 
-      return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
+    if (!member) {
+        return message.reply("Please mention a valid member of this server");
+    }
+    if (!member.bannable) {
+        return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
+    }
 
     let reason = args.slice(1).join(' ');
-    if(!reason) reason = "No reason provided";
+    if (!reason) {
+        reason = "No reason provided";
+    }
     
     await member.ban(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
@@ -115,22 +126,27 @@ client.on("message", async message => {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
     // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
-    if(!message.member.roles.some(r=>["Owner", "Moderator", "MC-staff", "Helper", "Programmeur", "Admin", "Lead-Moderator", "Head-Admin"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
+    if (!message.member.roles.some(r=>["Owner", "Moderator", "MC-staff", "Helper", "Programmeur", "Admin", "Lead-Moderator", "Head-Admin"].includes(r.name))) {
+        return message.reply("Sorry, you don't have permissions to use this!");
+    }
     
     // Let's first check if we have a member and if we can kick them!
     // message.mentions.members is a collection of people that have been mentioned, as GuildMembers.
     // We can also support getting the member by ID, which would be args[0]
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-    if(!member)
-      return message.reply("Please mention a valid member of this server");
-    if(!member.kickable) 
-      return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
+    if (!member) {
+        return message.reply("Please mention a valid member of this server");
+    }
+    if (!member.kickable) {
+        return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
+    }
     
     // slice(1) removes the first part, which here should be the user mention or ID
     // join(' ') takes all the various parts to make it a single string.
     let reason = args.slice(1).join(' ');
-    if(!reason) reason = "No reason provided";
+    if (!reason) {
+        reason = "No reason provided";
+    }
     
     // Now, time for a swift kick in the nuts!
     await member.kick(reason)
@@ -146,8 +162,9 @@ client.on("message", async message => {
     const deleteCount = parseInt(args[0], 10);
     
     // Ooooh nice, combined conditions. <3
-    if(!deleteCount || deleteCount < 2 || deleteCount > 10000)
-      return message.reply("Please provide a number between 1 and 10000 for the number of messages to delete");
+    if (!deleteCount || deleteCount < 2 || deleteCount > 10000) {
+        return message.reply("Please provide a number between 1 and 10000 for the number of messages to delete");
+    }
     
     // So we get our messages, and delete them. Simple enough, right?
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
@@ -197,7 +214,9 @@ if (msg.includes('FUCK')) {
 if (msg.startsWith(prefix + 'EVENT')) {
 	       const color = args[0]
            const text = args.slice(0).join(" ");
-           if (text.length < 1) return message.channel.send("Can not make an event of nothing");
+           if (text.length < 1) {
+               return message.channel.send("Can not make an event of nothing");
+           }
            const embed = new Discord.RichEmbed()
            .setColor(0xff6300)
            .setTitle("Event")
@@ -209,7 +228,9 @@ if (msg.startsWith(prefix + 'EVENT')) {
 if (msg.startsWith(prefix + 'MELD')) {
 	       const color = args[0]
            const text = args.slice(0).join(" ");
-           if (text.length < 1) return message.channel.send("Can not make an event of nothing");
+           if (text.length < 1) {
+               return message.channel.send("Can not make an event of nothing");
+           }
            const embed = new Discord.RichEmbed()
            .setColor(0x0000ff)
            .setTitle("Melding")
