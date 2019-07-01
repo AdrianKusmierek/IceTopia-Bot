@@ -140,6 +140,7 @@ client.on("message", async message => {
 	
 	if(command === "purge") {
     // This command removes all messages from all users in the channel, up to 10000.
+        sender.delete({timeout; 1000});
     
     // get the delete count, as an actual number.
     const deleteCount = parseInt(args[0], 10);
