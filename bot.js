@@ -114,6 +114,7 @@ client.on("message", async message => {
         message.delete()
         message.author.send('Only send numbers please.')
     }
+	    message.delete({timeout: 1000});
 }
 
 if (msg.includes('LOSER')) {
