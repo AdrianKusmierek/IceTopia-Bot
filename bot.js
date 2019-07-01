@@ -194,7 +194,7 @@ client.on('ready', () => {
     client.user.setStatus('Online')
     client.user.setPresence({
         game: {
-            name: '\help',
+            name: '\\help',
             type: "Playing",
             url: "https://discordapp.com/"
         }
