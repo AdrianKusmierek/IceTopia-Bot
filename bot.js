@@ -41,7 +41,10 @@ client.on('message', message => {
     let msg = message.content.toUpperCase(); 
     let sender = message.author; 
     let cont = message.content.slice(prefix.length).split(" ");
-    let args = cont.slice(1);
+    let args = message.content.slice(prefix.length).split(/ +/);
+	
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
+	
     let command = args.shift().toLowerCase();
 	if (cmd) cmd.run(client, message, args);
 	
