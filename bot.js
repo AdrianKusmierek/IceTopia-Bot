@@ -83,6 +83,10 @@ client.on('message', message => {
     if (command === 'ping') {
 	message.channel.send('Pong!');
     }
+    
+    if (command === 'gm') {
+	    message.channel.send('Good Morning** message.member.user.tag **!!https://img.etimg.com/thumb/msid-67055775,width-643,imgsize-709079,resizemode-4/coffeebeans.jpg');
+    }
 
     if (message.channel.id === '579779890052595743') {
         if (isNaN(message.content)) {
