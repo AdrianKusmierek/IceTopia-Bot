@@ -42,7 +42,7 @@ client.on('message', message => {
     let sender = message.author; 
     let cont = message.content.slice(prefix.length).split(" ");
     let args = cont.slice(1);
-    var command = args.shift().toLowerCase();
+    let command = args.shift().toLowerCase();
 	if (cmd) cmd.run(client, message, args);
 	
 	if (!message.content.startsWith(prefix)) return;
