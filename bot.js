@@ -45,13 +45,12 @@ client.on('message', message => {
 	
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 	
-    let command = args.shift().toLowerCase();
-	if (cmd) cmd.run(client, message, args);
-	
 	if (!message.content.startsWith(prefix)) return;
 	
 	var cmd = client.commands.get(cont[0])
+	var command = args.shift().toLowerCase();
 	if (cmd) cmd.run(client, message, args);
+	
 
    
     // first we need to make sure that it isn't reading a message that the bot is sending
